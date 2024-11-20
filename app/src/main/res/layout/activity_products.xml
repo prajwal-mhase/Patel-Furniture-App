@@ -97,4 +97,14 @@
         </LinearLayout>
     </ScrollView>
 
+    <!-- Container LinearLayout for dynamic content -->
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_vertical" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -67,7 +67,7 @@ class ProductsActivity : AppCompatActivity() {
             val newBox = MaterialCardView(this).apply {
                 layoutParams = LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
-                    150 // Height for the box
+                    100 // Height for the box
                 ).apply {
                     setMargins(0, 16, 0, 16) // Add margin between boxes
                 }
@@ -118,11 +118,13 @@ class ProductsActivity : AppCompatActivity() {
         }
 
         val boxWidth = resources.getDimensionPixelSize(R.dimen.default_box_width)
+        val boxHeight = resources.getDimensionPixelSize(R.dimen.default_box_height)
+
 
         // Loop to add two grid boxes (1x2 grid)
         for (i in 0 until 2) {
             val gridBox = MaterialCardView(this).apply {
-                layoutParams = LinearLayout.LayoutParams(boxWidth, boxWidth).apply {
+                layoutParams = LinearLayout.LayoutParams(boxWidth, boxHeight).apply {
                     setMargins(8, 8, 8, 8)
                 }
                 setCardElevation(4f)
@@ -158,7 +160,7 @@ class ProductsActivity : AppCompatActivity() {
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.MATCH_PARENT
                 ).apply {
-                    setMargins(20, 20, 20, 20) // Add margin to the image (4 sides)
+                    setMargins(20, 20, 20, 300) // Add margin to the image (4 sides)
                 }
                 layoutParams = imageParams
             }
@@ -175,35 +177,35 @@ class ProductsActivity : AppCompatActivity() {
                 when {
                     boxType == "Vista M. R. 303" && materialSize == "18 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$50"
+                        price = "₹ 2880.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "18 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$55"
+                        price = "₹ 2520.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "12 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$40"
+                        price = "₹ 2240.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "12 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$45"
+                        price = "₹ 1960.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "8 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$35"
+                        price = "₹ 1920.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "8 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$40"
+                        price = "₹ 1680.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "6 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$30"
+                        price = "₹ 1280.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "6 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "$35"
+                        price = "₹ 1120.00"
                     }
                     boxType == "Kitply 710" && materialSize == "18 MM" && i == 0 -> {
                         companyName = "Kitply 710"
@@ -248,7 +250,7 @@ class ProductsActivity : AppCompatActivity() {
                 setTextColor(resources.getColor(R.color.black, theme)) // Set text color
                 gravity = Gravity.CENTER
                 setTypeface(null, android.graphics.Typeface.BOLD) // Make company name bold
-                setPadding(0, 8, 0, 8) // Add padding between image and description
+                setPadding(0, 500, 0, 8) // Add padding between image and description
             }
 
             // Add the description below the image
