@@ -1,0 +1,35 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.PatelFurniture"
+        tools:targetApi="31">
+
+        <!-- Main Activity (Launcher Activity) -->
+        <activity android:name=".MainActivity"
+            android:exported="true"> <!-- Explicitly set android:exported -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- About Us Activity -->
+        <activity android:name=".AboutUsActivity"
+            android:exported="false" /> <!-- Explicitly set android:exported -->
+
+        <!-- Products Activity -->
+        <activity android:name=".ProductsActivity"
+            android:exported="false" /> <!-- Explicitly set android:exported -->
+
+        <!-- Contact Us Activity -->
+        <activity android:name=".ContactUsActivity"
+            android:exported="false" /> <!-- Explicitly set android:exported -->
+
+    </application>
+</manifest>

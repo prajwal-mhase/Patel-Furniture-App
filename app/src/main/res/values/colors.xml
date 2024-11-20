@@ -1,0 +1,9 @@
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="cold_white">#E1F5FE</color>
+    <color name="purple_500">#9C27B0</color>
+    <color name="primary">#1E3A8A</color> <!-- New primary color for buttons or text -->
+    <color name="secondary">#0288D1</color> <!-- Secondary color for highlights -->
+    <color name="card_background">#FFFFFF</color> <!-- Card background color -->
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cold_white">
+
+    <ImageView
+        android:id="@+id/imageBackButton2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toTopOf="@+id/scrollableArea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:contentDescription="Company Logo"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+    <ScrollView
+        android:id="@+id/scrollableArea"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/companyLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:text="About Us"
+                android:textColor="#4A2C2A"
+                android:textSize="28sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Welcome to Patel Furniture!"
+                android:textSize="20sp"
+                android:textColor="#BF360C"
+                android:paddingBottom="8dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="At Patel Furniture, we are dedicated to providing high-quality wooden plywoods that combine durability with elegance. Founded with a passion for craftsmanship, our mission is to bring the beauty of nature into your home through our carefully curated selection of furniture and materials."
+                android:textColor="#424242"
+                android:paddingBottom="8dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Our Story"
+                android:textSize="22sp"
+                android:textColor="#4A2C2A"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="With years of experience in the furniture industry, we understand the importance of quality and design. Our journey began with a simple vision: to create beautiful, functional furniture that enhances your living spaces. We source our plywood from sustainable forests, ensuring that our products are not only stylish but also environmentally friendly."
+                android:textColor="#424242"
+                android:paddingBottom="8dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="What We Offer"
+                android:textSize="22sp"
+                android:textColor="#4A2C2A"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Quality Products: Each piece of plywood is crafted with precision and care, ensuring longevity and beauty."
+                android:textColor="#424242"
+                android:paddingBottom="4dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="- Variety of Designs: From modern minimalism to classic styles, we offer a wide range of designs to suit every taste."
+                android:textColor="#424242"
+                android:paddingBottom="8dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Why Choose Us?"
+                android:textSize="22sp"
+                android:textColor="#4A2C2A"
+                android:paddingTop="16dp"
+                android:paddingBottom="4dp"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="At Patel Furniture, we believe that every piece of furniture tells a story. We strive to create products that resonate with your lifestyle and enhance your living environment. Our commitment to quality and customer satisfaction sets us apart in the industry."
+                android:textColor="#424242"
+                android:paddingBottom="8dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join us on this journey to transform your home with our exquisite wooden plywoods. We invite you to explore our collection and experience the Patel Furniture difference."
+                android:textColor="#424242"
+                android:paddingBottom="8dp"
+                android:justificationMode="inter_word" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thank you for choosing Patel Furniture!"
+                android:textSize="20sp"
+                android:textColor="#BF360C"
+                android:paddingBottom="8dp"
+                android:gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
