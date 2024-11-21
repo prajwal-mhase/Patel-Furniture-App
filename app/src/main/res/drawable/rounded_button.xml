@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Define the background color (violet) -->
+    <solid android:color="@color/violet" /> <!-- Violet color for the button -->
+
+    <!-- Define the corners of the button -->
+    <corners android:radius="200dp" /> <!-- Rounded corners with a large radius -->
+
+    <!-- Optional: Define a border color -->
+    <stroke android:color="@color/black" android:width="2dp" />
+
+    <!-- Optional: Define a shadow or dark background effect -->
+    <solid android:color="#4B0082" />  <!-- A darker shade of violet -->
+</shape>
