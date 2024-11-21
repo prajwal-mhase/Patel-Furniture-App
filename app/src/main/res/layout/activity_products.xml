@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cold_white"
+    android:background="@color/light_grey"
     tools:context=".ProductsActivity">
 
 
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/white"
+            android:background="@color/cold_white"
             android:padding="16dp">
 
             <com.google.android.material.card.MaterialCardView

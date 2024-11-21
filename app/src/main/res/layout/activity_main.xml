@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E1F5FE"
+    android:background="@color/light_grey"
     tools:context=".MainActivity">
 
     <!-- Company Logo at the Top with Larger Size -->
@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="#FFFFFF"
+        android:background="@color/cold_white"
         android:fillViewport="true">
 
         <!-- LinearLayout for the Squares (aligned at the top) -->

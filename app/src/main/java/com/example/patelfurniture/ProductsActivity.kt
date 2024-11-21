@@ -1,6 +1,10 @@
 package com.example.patelfurniture
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StyleSpan
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -120,7 +124,6 @@ class ProductsActivity : AppCompatActivity() {
         val boxWidth = resources.getDimensionPixelSize(R.dimen.default_box_width)
         val boxHeight = resources.getDimensionPixelSize(R.dimen.default_box_height)
 
-
         // Loop to add two grid boxes (1x2 grid)
         for (i in 0 until 2) {
             val gridBox = MaterialCardView(this).apply {
@@ -172,84 +175,105 @@ class ProductsActivity : AppCompatActivity() {
             val descriptionText = TextView(this@ProductsActivity).apply {
                 val companyName: String
                 val price: String
+                val size: String // Declare a variable for the size
 
                 // Provide the description based on image details
                 when {
                     boxType == "Vista M. R. 303" && materialSize == "18 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 2880.00"
+                        size = "8x4 Feet"
+                        price = "Rs 2880.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "18 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 2520.00"
+                        size = "7x4 Feet"
+                        price = "Rs 2520.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "12 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 2240.00"
+                        size = "8x4 Feet"
+                        price = "Rs 2240.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "12 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 1960.00"
+                        size = "7x4 Feet"
+                        price = "Rs 1960.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "8 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 1920.00"
+                        size = "8x4 Feet"
+                        price = "Rs 1920.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "8 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 1680.00"
+                        size = "7x4 Feet"
+                        price = "Rs 1680.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "6 MM" && i == 0 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 1280.00"
+                        size = "8x4 Feet"
+                        price = "Rs 1280.00"
                     }
                     boxType == "Vista M. R. 303" && materialSize == "6 MM" && i == 1 -> {
                         companyName = "Vista M. R. 303"
-                        price = "₹ 1120.00"
+                        size = "7x4 Feet"
+                        price = "Rs 1120.00"
                     }
                     boxType == "Kitply 710" && materialSize == "18 MM" && i == 0 -> {
                         companyName = "Kitply 710"
-                        price = "$60"
+                        size = "8x4 Feet"
+                        price = "Rs 3520.00"
                     }
                     boxType == "Kitply 710" && materialSize == "18 MM" && i == 1 -> {
                         companyName = "Kitply 710"
-                        price = "$65"
+                        size = "7x4 Feet"
+                        price = "Rs 3220.00"
                     }
                     boxType == "Kitply 710" && materialSize == "12 MM" && i == 0 -> {
                         companyName = "Kitply 710"
-                        price = "$50"
+                        size = "8x4 Feet"
+                        price = "Rs 2400.00"
                     }
                     boxType == "Kitply 710" && materialSize == "12 MM" && i == 1 -> {
                         companyName = "Kitply 710"
-                        price = "$55"
+                        size = "7x4 Feet"
+                        price = "Rs 2100.00"
                     }
                     boxType == "Kitply 710" && materialSize == "8 MM" && i == 0 -> {
                         companyName = "Kitply 710"
-                        price = "$45"
+                        size = "8x4 Feet"
+                        price = "Rs 2080.00"
                     }
                     boxType == "Kitply 710" && materialSize == "8 MM" && i == 1 -> {
                         companyName = "Kitply 710"
-                        price = "$50"
+                        size = "7x4 Feet"
+                        price = "Rs 1820.00"
                     }
                     boxType == "Kitply 710" && materialSize == "6 MM" && i == 0 -> {
                         companyName = "Kitply 710"
-                        price = "$40"
+                        size = "8x4 Feet"
+                        price = "Rs 1760.00"
                     }
                     boxType == "Kitply 710" && materialSize == "6 MM" && i == 1 -> {
                         companyName = "Kitply 710"
-                        price = "$45"
+                        size = "7x4 Feet"
+                        price = "Rs 1540.00"
                     }
                     else -> {
                         companyName = "Unknown"
-                        price = "$0"
+                        size = "Unknown"
+                        price = "Rs 00.00"
                     }
                 }
 
-                text = "$companyName\nSize: $materialSize\nPrice: $price"
+                // Create a SpannableString to set bold for company name and normal for size and price
+                val description = SpannableString("$companyName\nSize: $size\nPrice: $price")
+                description.setSpan(StyleSpan(Typeface.BOLD), 0, companyName.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+                text = description
                 textSize = 16f
                 setTextColor(resources.getColor(R.color.black, theme)) // Set text color
                 gravity = Gravity.CENTER
-                setTypeface(null, android.graphics.Typeface.BOLD) // Make company name bold
                 setPadding(0, 500, 0, 8) // Add padding between image and description
             }
 
@@ -264,6 +288,7 @@ class ProductsActivity : AppCompatActivity() {
         val index = container.indexOfChild(parentBox) + 1
         container.addView(gridLayout, index)
     }
+
 
 
 

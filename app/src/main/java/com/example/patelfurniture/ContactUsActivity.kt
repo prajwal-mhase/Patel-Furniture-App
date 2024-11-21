@@ -50,9 +50,9 @@ class ContactUsActivity : AppCompatActivity() {
 
     // Function to open Google Maps
     fun openGoogleMaps(view: View) {
-        val location = Uri.parse("geo:0,0?q=Yeola+Road,+Kopargaon,+Tal.+Kopargaon,+Dist.+Ahmednagar+423601")
+        val location = Uri.parse("https://maps.app.goo.gl/3Z9yVoRNAnLPVRQk6")
         val intent = Intent(Intent.ACTION_VIEW, location)
-        intent.setPackage("com.google.android.apps.maps")
         startActivity(intent)
     }
+
 }
