@@ -9,41 +9,25 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="Patel Furniture"
-    android:theme="@style/Theme.PatelFurniture"
-    tools:targetApi="31">
+        android:theme="@style/Theme.PatelFurniture"
+        tools:targetApi="31">
 
-    <!-- WelcomePageActivity as the launcher activity -->
-    <activity
-        android:name=".WelcomePageActivity"
-        android:exported="true"> <!-- Allow WelcomePageActivity to be exported -->
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+        <!-- LoginActivity as the launcher activity -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
-    <!-- Main Activity -->
-    <activity
-        android:name=".MainActivity"
-        android:exported="true">
-        <!-- No need to define the MAIN filter here as WelcomePageActivity has it -->
-    </activity>
+        <!-- Other activities -->
+        <activity android:name=".SignUpActivity" android:exported="true" />
+        <activity android:name=".MainActivity" android:exported="true" />
+                <activity android:name=".ProductsActivity" android:exported="true" />
+        <activity android:name=".AboutUsActivity" android:exported="false" />
+        <activity android:name=".ContactUsActivity" android:exported="false" />
 
-    <!-- About Us Activity -->
-    <activity
-        android:name=".AboutUsActivity"
-        android:exported="false" />
-
-    <!-- Products Activity -->
-    <activity
-        android:name=".ProductsActivity"
-        android:exported="false" />
-
-    <!-- Contact Us Activity -->
-    <activity
-        android:name=".ContactUsActivity"
-        android:exported="false" />
-
-</application>
-
-    </manifest>
+    </application>
+</manifest>

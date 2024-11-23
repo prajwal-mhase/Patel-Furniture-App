@@ -28,11 +28,7 @@ class ContactUsActivity : AppCompatActivity() {
             sendEmail("patelanup4444@gmail.com")
         }
 
-        // Set back button onClickListener
-        val backButton: ImageView = findViewById(R.id.imageBackButton3)
-        backButton.setOnClickListener {
-            onBackPressed() // Close the current activity and go back to the previous one
-        }
+        // Set back butto
     }
 
     // Function to dial a phone number

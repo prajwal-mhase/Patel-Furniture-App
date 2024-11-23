@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "245985679361",
+    "project_id": "patel---furniture",
+    "storage_bucket": "patel---furniture.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:245985679361:android:931e0ecf15fd9c10a90800",
+        "android_client_info": {
+          "package_name": "com.example.patelfurniture"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgNDZZFTQ4ZNt-ekO1lhUeI4nge44YlSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
