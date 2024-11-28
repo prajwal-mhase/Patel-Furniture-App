@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,6 +5,14 @@
     android:layout_height="match_parent"
     android:background="@color/light_grey"
     tools:context=".ProductsActivity">
+
+    <!-- ProgressBar to show while loading data -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
     <!-- Company Logo (Centered) -->
     <ImageView
@@ -37,7 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toBottomOf="@id/companyLogo"
+        app:layout_constraintTop_toBottomOf="@+id/companyLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -48,34 +55,10 @@
             android:layout_height="wrap_content"
             android:background="@color/cold_white"
             android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- ProgressBar for loading indication -->
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_gravity="center"
-                android:indeterminate="true" />
-
-            <!-- Error message TextView (Initially Hidden) -->
-            <TextView
-                android:id="@+id/errorMessageTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Unable to load products. Please check your internet connection."
-                android:textColor="@android:color/holo_red_dark"
-                android:textSize="16sp"
-                android:gravity="center"
-                android:visibility="gone"
-                android:padding="16dp" />
-
-            <!-- The products will be dynamically added here -->
-        </LinearLayout>
+            android:padding="16dp" />
     </ScrollView>
 
-    <!-- Footer layout with icons -->
+    <!-- Footer Layout -->
     <LinearLayout
         android:id="@+id/footerLayout"
         android:layout_width="match_parent"
@@ -125,5 +108,4 @@
             android:scaleType="centerInside"
             android:padding="8dp" />
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

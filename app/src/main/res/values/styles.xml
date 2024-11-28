@@ -1,0 +1,10 @@
+<resources>
+    <!-- Custom style for PopupMenu -->
+    <style name="CustomPopupMenu" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:paddingLeft">8dp</item> <!-- Adjust horizontal padding -->
+        <item name="android:paddingRight">8dp</item> <!-- Adjust horizontal padding -->
+        <item name="android:paddingTop">4dp</item> <!-- Reduce vertical padding -->
+        <item name="android:paddingBottom">4dp</item> <!-- Reduce vertical padding -->
+        <item name="android:minHeight">48dp</item> <!-- Reduce the height of the items -->
+    </style>
+</resources>

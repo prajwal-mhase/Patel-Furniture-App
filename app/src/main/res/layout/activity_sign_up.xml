@@ -1,4 +1,5 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,7 +30,8 @@
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:padding="16dp"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
         android:textSize="16sp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +47,8 @@
         android:background="@drawable/edittext_border"
         android:padding="16dp"
         android:inputType="textPassword"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/emailEditText"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +65,8 @@
         android:background="@drawable/edittext_border"
         android:padding="16dp"
         android:inputType="textPassword"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +88,6 @@
         android:textColor="@android:color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirmPasswordEditText" />
 
@@ -97,8 +100,7 @@
         android:background="@color/black"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        app:layout_constraintTop_toBottomOf="@id/signUpButton"
-        tools:layout_editor_absoluteX="20dp" />
+        app:layout_constraintTop_toBottomOf="@id/signUpButton" />
 
     <!-- Login TextView -->
     <TextView
@@ -113,4 +115,16 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- ProgressBar -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/loginTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

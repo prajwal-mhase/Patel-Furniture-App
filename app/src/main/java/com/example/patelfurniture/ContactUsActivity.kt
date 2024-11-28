@@ -3,20 +3,24 @@ package com.example.patelfurniture
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.widget.TextView
-import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.patelfurniture.databinding.ActivityContactUsBinding
 
 class ContactUsActivity : AppCompatActivity() {
 
+    // Declare a binding variable
+    private lateinit var binding: ActivityContactUsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_contact_us)
+        // Initialize the binding
+        binding = ActivityContactUsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Find phone and email TextViews
-        val phoneTextView: TextView = findViewById(R.id.phone)
-        val emailTextView: TextView = findViewById(R.id.email)
+        // Find phone and email TextViews using binding
+        val phoneTextView = binding.phone
+        val emailTextView = binding.email
 
         // Set phone number onClickListener
         phoneTextView.setOnClickListener {
@@ -28,7 +32,8 @@ class ContactUsActivity : AppCompatActivity() {
             sendEmail("patelanup4444@gmail.com")
         }
 
-        // Set back butto
+        // Set up footer icons
+        setUpFooterIcons()
     }
 
     // Function to dial a phone number
@@ -51,4 +56,29 @@ class ContactUsActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    // Function to set up footer icons
+    private fun setUpFooterIcons() {
+        // Icon 1 (Product Activity)
+        binding.iconHome.setOnClickListener {
+            val intent = Intent(this, ProductsActivity::class.java)
+            startActivity(intent)
+            // Left-to-right slide-in and right-to-left slide-out transition
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+
+        binding.iconCart.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
+            startActivity(intent)
+            // Left-to-right slide-in and right-to-left slide-out transition
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+
+        // Icon 2 (About Us Activity)
+        binding.iconAboutUs.setOnClickListener {
+            val intent = Intent(this, AboutUsActivity::class.java)
+            startActivity(intent)
+            // Left-to-right slide-in and right-to-left slide-out transition
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        }
+    }
 }

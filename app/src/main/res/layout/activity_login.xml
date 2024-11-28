@@ -30,12 +30,13 @@
         android:hint="Login ID"
         android:inputType="text"
         android:padding="16dp"
-        android:textColor="@color/primaryTextColor"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
         android:textSize="16sp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appLogo" />
+    android:layout_marginTop="32dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/appLogo" />
 
     <!-- Password EditText -->
     <EditText
@@ -46,13 +47,14 @@
         android:background="@drawable/edittext_border"
         android:padding="16dp"
         android:inputType="textPassword"
-        android:textColor="@color/primaryTextColor"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/usernameEditText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintColor"
+    android:textSize="16sp"
+    app:layout_constraintTop_toBottomOf="@id/usernameEditText"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginHorizontal="32dp"
+    android:layout_marginTop="16dp" />
 
     <!-- Login Button -->
     <Button

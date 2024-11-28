@@ -6,10 +6,12 @@ import android.util.Patterns
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUpActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var progressBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class SignUpActivity : AppCompatActivity() {
         val confirmPasswordEditText = findViewById<EditText>(R.id.confirmPasswordEditText)
         val signUpButton = findViewById<Button>(R.id.signUpButton)
         val loginTextView = findViewById<TextView>(R.id.loginTextView)
+        progressBar = findViewById<ProgressBar>(R.id.progressBar)
 
         // Handle Sign Up Button Click
         signUpButton.setOnClickListener {
@@ -52,6 +55,9 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            // Show the progress bar when the sign-up process starts
+            progressBar.visibility = ProgressBar.VISIBLE
+
             // Proceed with Firebase authentication
             signUpWithEmail(email, password)
         }
@@ -72,14 +78,43 @@ class SignUpActivity : AppCompatActivity() {
     private fun signUpWithEmail(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
+                // Hide the progress bar after the operation is complete
+                progressBar.visibility = ProgressBar.GONE
+
                 if (task.isSuccessful) {
-                    // Show success message and navigate to Login Activity
-                    Toast.makeText(this, "Sign-up successful!", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this, LoginActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                    // Sign-up was successful
+                    val currentUser = auth.currentUser
+                    currentUser?.let {
+                        val userId = it.uid
+                        val email = it.email
+
+                        // Get a reference to the database and store the user's email
+                        val database = FirebaseDatabase.getInstance().reference
+                        val userMap = hashMapOf<String, String>(
+                            "email" to email.orEmpty()
+                        )
+
+                        // Store the email under the user's unique ID
+                        database.child("users").child(userId).setValue(userMap)
+                            .addOnCompleteListener { dbTask ->
+                                if (dbTask.isSuccessful) {
+                                    // After successful sign-up and data saving, sign out the user
+                                    auth.signOut()
+
+                                    // Notify user and redirect to LoginActivity
+                                    Toast.makeText(this, "Sign-up successful! Please log in.", Toast.LENGTH_SHORT).show()
+
+                                    // Redirect to LoginActivity
+                                    val intent = Intent(this, LoginActivity::class.java)
+                                    startActivity(intent)
+                                    finish() // Close SignUpActivity so the user can't navigate back
+                                } else {
+                                    Toast.makeText(this, "Error saving user data: ${dbTask.exception?.message}", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                    }
                 } else {
-                    // Show error message
+                    // Handle sign-up failure
                     Toast.makeText(this, "Sign-up failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                 }
             }

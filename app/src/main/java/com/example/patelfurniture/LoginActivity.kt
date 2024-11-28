@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Check if user is already logged in
         if (auth.currentUser != null) {
-            navigateToMainActivity()
+            navigateToProductsActivity()
             return
         }
 
@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     progressBar.visibility = View.GONE
                     if (task.isSuccessful) {
-                        navigateToMainActivity()
+                        navigateToProductsActivity()
                     } else {
                         Toast.makeText(this, "Authentication Failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
@@ -83,9 +83,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigateToMainActivity() {
-        val intent = Intent(this, MainActivity::class.java)
+    private fun navigateToProductsActivity() {
+        val intent = Intent(this, ProductsActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
-        finish()
+        finish() // Ensure LoginActivity is finished so it's removed from the stack
     }
+
 }

@@ -9,7 +9,17 @@
     <color name="primaryTextColor">#6200EE</color>
     <color name="violet">#8A2BE2</color>
     <color name="buttonColor">#000000</color>
+    <color name="light_pink">#FFB6C1</color>
     <color name="primaryColor">#6200EE</color>
     <color name="blue">#003366</color>  <!-- Example blue color -->
-    <color name="card_background">#FFFFFF</color> <!-- Card background color -->
+    <color name="card_background">#FFFFFF</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="grey">#B0B0B0</color>
+    <color name="shadow_color">#000000</color>
+    <color name="hintColor">#000000</color> <!-- Example hint color -->
+
+    <!-- Additional Accent Colors -->
+    <color name="primary_text">#212121</color>
+    <color name="accent_blue">#1976D2</color>
+    <color name="secondary_text">#757575</color><!-- Card background color -->
 </resources>
