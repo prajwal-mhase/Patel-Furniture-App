@@ -194,7 +194,7 @@ class ProductsActivity : AppCompatActivity() {
         val location = IntArray(2)
         view.getLocationOnScreen(location)
 
-        val leftMargin = 50 // Adjust this value for the desired left margin in pixels
+        val leftMargin = -150 // Adjust this value for the desired left margin in pixels
 
         // Show the popup window below the right icon, with an added left margin
         popupWindow?.showAtLocation(view, Gravity.NO_GRAVITY, location[0] + leftMargin, location[1] + view.height)

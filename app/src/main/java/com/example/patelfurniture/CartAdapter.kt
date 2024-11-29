@@ -1,6 +1,7 @@
 package com.example.patelfurniture
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -80,11 +81,18 @@ class CartAdapter(
 
                 // Also update SharedPreferences by removing the item
                 CartManager.removeFromCart(context, cartItemToRemove.id)
+
+                // Check if cart is empty, and if so, open CartActivity
+                if (uniqueCartItemList.isEmpty()) {
+                    val intent = Intent(context, CartActivity::class.java)
+                    context.startActivity(intent)
+                }
             }
         } catch (e: Exception) {
             Log.e("CartAdapter", "Error removing item at position $position", e)
         }
     }
+
 
     // ViewHolder class to hold the item views
     inner class CartViewHolder(val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root)

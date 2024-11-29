@@ -76,7 +76,7 @@
                 android:id="@+id/mapsLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:clickable="true"
                 android:focusable="true"
                 android:gravity="center"
@@ -89,7 +89,7 @@
                 android:id="@+id/phoneSection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -105,13 +105,12 @@
                     android:id="@+id/phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:autoLink="phone"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
                     android:onClick="dialPhoneNumber"
                     android:text="+91 9822974444"
-                    android:textColor="#00008B"
+                    android:textColor="@color/violet"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -119,7 +118,7 @@
                 android:id="@+id/emailSection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
@@ -135,13 +134,12 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:autoLink="email"
                     android:clickable="true"
                     android:focusable="true"
                     android:gravity="center"
                     android:onClick="sendEmail"
                     android:text="patelanup4444@gmail.com"
-                    android:textColor="#00008B"
+                    android:textColor="@color/violet"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
